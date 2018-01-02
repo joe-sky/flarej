@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="../dist/css/flarej.css" rel="stylesheet" />
+  <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <script type="text/nornj" data-auto id="t1">
+      <Container>
+        <#tmpl>
+          <section class="carousel-box">
+            <fj-Carousel type="fade" infinte="ture">
+              <ul>
+                <li><img src="http://img30.360buyimg.com/vc/jfs/t11536/341/1830537276/442907/8d814d62/5a09757eN1d192882.jpg"></li>
+                <li><img src="http://img30.360buyimg.com/vc/jfs/t11140/282/573960884/108947/8fb9b075/59f2d3d5N3ee8d895.jpg"></li>
+                <li><img src="http://img30.360buyimg.com/vc/jfs/t12493/26/175095742/141776/769465cf/5a0568a1N34edddde.jpg"></li>
+              </ul>
+            </fj-Carousel>
+          </section>
+        </#tmpl>
+      </Container>
+    </script>
+  </div>
+  <script src="../node_modules/react/dist/react.js"></script>
+  <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+  <script src="../node_modules/nornj/dist/nornj.js"></script>
+  <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
+  <script src="../dist/js/flarej.js"></script>
+  <script src="./vendor/lodash.min.js"></script>
+  <script src="./vendor/aviator.min.js"></script>
+  <script>
+    nj.registerComponent('Container', React.createClass({
+
+      render: function () {
+        //console.log(nj.templates.t1._mainT1.toString());
+        return this.props.tmpls[0]();
+      }
+    }));
+  </script>
+</body>
+</html>

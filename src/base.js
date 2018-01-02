@@ -7,12 +7,14 @@ import * as date from './utils/date';
 import responsive from './higherOrders/responsive';
 import Pagination from './components/pagination';
 import Gesture from './components/gesture';
+import Carousel from './components/carousel';
 
 Object.assign(fj, {
   config,
   responsive,
   Pagination,
-  Gesture
+  Gesture,
+  Carousel
 });
 
 const _global = typeof self !== 'undefined' ? self : global;
@@ -31,6 +33,7 @@ export {
   regexp,
   sort,
   math,
-  date
+  date,
+  Carousel
 };
 export default fj;
