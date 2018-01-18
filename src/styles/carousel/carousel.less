@@ -26,6 +26,7 @@
     color: #fff;
     line-height: 60px;
     cursor: pointer;
+    z-index: 15;
   }
   .arrow-left{
     left: 0;
@@ -38,6 +39,7 @@
     position: absolute;
     bottom: 10px;
     left: 0;
+    z-index: 15;
     width: 100%;
     height: 15px;
     line-height: 15px;
@@ -57,5 +59,20 @@
     .active{
       background: #46d9f9;
     }
+  }
+}
+
+/*动画效果*/
+.carousel-fade{
+  ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  li{
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
