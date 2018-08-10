@@ -5,7 +5,12 @@ import 'antd/lib/radio/style/index';
 registerComponent({
   'ant-Radio': Radio,
   'ant-RadioButton': Radio.Button,
-  'ant-RadioGroup': Radio.Group
+  'ant-RadioGroup': {
+    component: Radio.Group,
+    options: {
+      hasEventObject: true
+    }
+  }
 });
 
 export {

@@ -3,7 +3,12 @@ import Switch from 'antd/lib/switch';
 import 'antd/lib/switch/style/index';
 
 registerComponent({
-  'ant-Switch': Switch
+  'ant-Switch': {
+    component: Switch,
+    options: {
+      valuePropName: 'checked'
+    }
+  }
 });
 
 export {

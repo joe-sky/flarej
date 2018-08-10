@@ -6,7 +6,12 @@ registerComponent({
   'ant-DatePicker': DatePicker,
   'ant-MonthPicker': DatePicker.MonthPicker,
   'ant-WeekPicker': DatePicker.WeekPicker,
-  'ant-RangePicker': DatePicker.RangePicker
+  'ant-RangePicker': {
+    component: DatePicker.RangePicker,
+    options: {
+      needToJS: true
+    }
+  }
 });
 
 export {

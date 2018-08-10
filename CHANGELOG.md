@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v0.3.0] 2018.8.10
+
+* 🌟 此版本开始须依赖`nornj v0.4.9`以上版本。
+* 🌟 增加部分`antd`表单组件的`NornJ`注册配置。
+
 ## [v0.2.12] 2018.7.23
 
 * 🌟 `ECharts`组件增加`showLoading`、`onChartReady`、`autoResize`参数。

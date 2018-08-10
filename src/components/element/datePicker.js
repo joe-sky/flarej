@@ -13,10 +13,20 @@ import 'element-theme-default/lib/time-picker.css';
 
 registerComponent({
   'el-DatePicker': DatePicker,
-  'el-DateRangePicker': DateRangePicker,
+  'el-DateRangePicker': {
+    component: DateRangePicker,
+    options: {
+      needToJS: true
+    }
+  },
   'el-TimeSelect': TimeSelect,
   'el-TimePicker': TimePicker,
-  'el-TimeRangePicker': TimeRangePicker
+  'el-TimeRangePicker': {
+    component: TimeRangePicker,
+    options: {
+      needToJS: true
+    }
+  }
 });
 
 export {

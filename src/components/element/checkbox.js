@@ -4,7 +4,18 @@ import 'element-theme-default/lib/icon.css';
 import 'element-theme-default/lib/checkbox.css';
 
 registerComponent({
-  'el-Checkbox': Checkbox
+  'el-Checkbox': {
+    component: Checkbox,
+    options: {
+      valuePropName: 'checked'
+    }
+  },
+  'el-CheckboxGroup': {
+    component: Checkbox.Group,
+    options: {
+      needToJS: true
+    }
+  }
 });
 
 export {

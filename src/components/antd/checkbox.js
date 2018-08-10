@@ -4,8 +4,20 @@ import 'antd/lib/checkbox/style/index';
 const CheckboxGroup = Checkbox.Group;
 
 registerComponent({
-  'ant-Checkbox': Checkbox,
-  'ant-CheckboxGroup' : CheckboxGroup
+  'ant-Checkbox': {
+    component: Checkbox,
+    options: {
+      hasEventObject: true,
+      valuePropName: 'checked',
+      targetPropName: 'checked'
+    }
+  },
+  'ant-CheckboxGroup': {
+    component: CheckboxGroup,
+    options: {
+      needToJS: true
+    }
+  }
 });
 
 export {
