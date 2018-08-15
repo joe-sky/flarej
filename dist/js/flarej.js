@@ -3766,7 +3766,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: '{ComposedComponent}', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: '{ComposedComponent}', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -3774,7 +3774,7 @@ _ex0.apply(p2, _dataRefer0);
 
 var _ex1 = p1.x['spread'];
 var _dataRefer1 = [
-  p2.d('state'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: '{ComposedComponent}', name: 'spread', result: p1.np }
+  p2.d('state'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: '{ComposedComponent}', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex1, 'spread', 'ex');
 
@@ -5346,7 +5346,7 @@ var _compParam1 = [_type1, _params1];
 
 var _ex0 = p1.x['if'];
 var _dataRefer0 = [
-  p2.d('hasFirst'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn3, p4, p5), level: 2 }
+  p2.d('hasFirst'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn3, p4, p5), level: 2 }
 ];
 p1.tf(_ex0, 'if', 'ex');
 
@@ -5403,7 +5403,7 @@ var _paramsE0 = {};
 
 var _ex2 = p1.x['else'];
 var _dataRefer2 = [
-{ _njOpts: true, _njFnsNo: 4, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE0, parentName: 'nj_ex', name: 'else', result: p1.r(p1, p2, p1.fn4, p4, _paramsE0) }
+{ _njOpts: true, _njFnsNo: 4, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE0, parentName: 'nj_ex', name: 'else', tagName: _type5, result: p1.r(p1, p2, p1.fn4, p4, _paramsE0) }
 ];
 p1.tf(_ex2, 'else', 'ex');
 
@@ -5411,7 +5411,7 @@ _ex2.apply(p2, _dataRefer2);
 
 _params5 = _paramsE0;
 var _dataRefer1 = [
-  p2.d('hasPages'),{ _njOpts: true, _njFnsNo: 13, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn5, p4, p5), props: _params5, level: 4 }
+  p2.d('hasPages'),{ _njOpts: true, _njFnsNo: 13, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type5, result: p1.r(p1, p2, p1.fn5, p4, p5), props: _params5, level: 4 }
 ];
 p1.aa(_params5, _dataRefer1);
 p1.tf(_ex1, 'if', 'ex');
@@ -5459,7 +5459,7 @@ _compParam1.push(p1.H(_compParam6));
 
 var _ex3 = p1.x['if'];
 var _dataRefer3 = [
-  p2.d('hasLast'),{ _njOpts: true, _njFnsNo: 14, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn14, p4, p5), level: 2 }
+  p2.d('hasLast'),{ _njOpts: true, _njFnsNo: 14, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn14, p4, p5), level: 2 }
 ];
 p1.tf(_ex3, 'if', 'ex');
 
@@ -5467,7 +5467,7 @@ _compParam1.push(_ex3.apply(p2, _dataRefer3));
 
 var _ex4 = p1.x['if'];
 var _dataRefer4 = [
-  p2.d('showPageCount'),{ _njOpts: true, _njFnsNo: 15, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn15, p4, p5), level: 2 }
+  p2.d('showPageCount'),{ _njOpts: true, _njFnsNo: 15, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn15, p4, p5), level: 2 }
 ];
 p1.tf(_ex4, 'if', 'ex');
 
@@ -5475,7 +5475,7 @@ _compParam1.push(_ex4.apply(p2, _dataRefer4));
 
 var _ex5 = p1.x['if'];
 var _dataRefer5 = [
-  p2.d('showCount'),{ _njOpts: true, _njFnsNo: 16, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn16, p4, p5), level: 2 }
+  p2.d('showCount'),{ _njOpts: true, _njFnsNo: 16, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn16, p4, p5), level: 2 }
 ];
 p1.tf(_ex5, 'if', 'ex');
 
@@ -5483,7 +5483,7 @@ _compParam1.push(_ex5.apply(p2, _dataRefer5));
 
 var _ex6 = p1.x['if'];
 var _dataRefer6 = [
-  p2.d('showPageSize'),{ _njOpts: true, _njFnsNo: 17, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn17, p4, p5), level: 2 }
+  p2.d('showPageSize'),{ _njOpts: true, _njFnsNo: 17, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn17, p4, p5), level: 2 }
 ];
 p1.tf(_ex6, 'if', 'ex');
 
@@ -5491,7 +5491,7 @@ _compParam1.push(_ex6.apply(p2, _dataRefer6));
 
 var _ex7 = p1.x['if'];
 var _dataRefer7 = [
-  p2.d('hasBtnGo'),{ _njOpts: true, _njFnsNo: 18, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn18, p4, p5), level: 2 }
+  p2.d('hasBtnGo'),{ _njOpts: true, _njFnsNo: 18, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn18, p4, p5), level: 2 }
 ];
 p1.tf(_ex7, 'if', 'ex');
 
@@ -5499,7 +5499,7 @@ _compParam1.push(_ex7.apply(p2, _dataRefer7));
 
 var _ex8 = p1.x['if'];
 var _dataRefer8 = [
-  p2.d('showRefresh'),{ _njOpts: true, _njFnsNo: 19, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', result: p1.r(p1, p2, p1.fn19, p4, p5), level: 2 }
+  p2.d('showRefresh'),{ _njOpts: true, _njFnsNo: 19, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'ul', name: 'if', tagName: _type1, result: p1.r(p1, p2, p1.fn19, p4, p5), level: 2 }
 ];
 p1.tf(_ex8, 'if', 'ex');
 
@@ -5557,7 +5557,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -5594,7 +5594,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -5655,7 +5655,7 @@ var _compParam0 = [_type0, _params0];
 
 var _ex0 = p1.x['each'];
 var _dataRefer0 = [
-  p2.d('pageSizes'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'select', name: 'each', result: p1.r(p1, p2, p1.fn3, p4, p5), level: 2 }
+  p2.d('pageSizes'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'select', name: 'each', tagName: _type0, result: p1.r(p1, p2, p1.fn3, p4, p5), level: 2 }
 ];
 p1.tf(_ex0, 'each', 'ex');
 
@@ -5672,7 +5672,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -5691,7 +5691,7 @@ var _paramsE1 = {};
 
 var _ex2 = p1.x['else'];
 var _dataRefer2 = [
-{ _njOpts: true, _njFnsNo: 1, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE1, parentName: 'nj_ex', name: 'else', result: p1.r(p1, p2, p1.fn1, p4, _paramsE1) }
+{ _njOpts: true, _njFnsNo: 1, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE1, parentName: 'nj_ex', name: 'else', tagName: _type0, result: p1.r(p1, p2, p1.fn1, p4, _paramsE1) }
 ];
 p1.tf(_ex2, 'else', 'ex');
 
@@ -5699,7 +5699,7 @@ _ex2.apply(p2, _dataRefer2);
 
 _params1 = _paramsE1;
 var _dataRefer1 = [
-  p2.d('setPageSize'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'div', name: 'if', result: p1.r(p1, p2, p1.fn2, p4, p5), props: _params1, level: 1 }
+  p2.d('setPageSize'),{ _njOpts: true, _njFnsNo: 3, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'div', name: 'if', tagName: _type0, result: p1.r(p1, p2, p1.fn2, p4, p5), props: _params1, level: 1 }
 ];
 p1.aa(_params1, _dataRefer1);
 p1.tf(_ex1, 'if', 'ex');
@@ -5954,7 +5954,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -5972,7 +5972,7 @@ var _paramsE1 = {};
 
 var _ex2 = p1.x['else'];
 var _dataRefer2 = [
-{ _njOpts: true, _njFnsNo: 1, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE1, parentName: 'nj_ex', name: 'else', result: p1.r(p1, p2, p1.fn1, p4, _paramsE1) }
+{ _njOpts: true, _njFnsNo: 1, global: p1, context: p2, outputH: true, useString: false, subExProps: _paramsE1, parentName: 'nj_ex', name: 'else', tagName: _type0, result: p1.r(p1, p2, p1.fn1, p4, _paramsE1) }
 ];
 p1.tf(_ex2, 'else', 'ex');
 
@@ -6001,7 +6001,7 @@ if (!_filter1) {
   _value0 = _tmp;
 }
 var _dataRefer1 = [
-  _value0,{ _njOpts: true, _njFnsNo: 7, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'div', name: 'if', result: p1.r(p1, p2, p1.fn2, p4, p5), props: _params1, level: 1 }
+  _value0,{ _njOpts: true, _njFnsNo: 7, global: p1, context: p2, outputH: true, useString: p1.us, parentName: 'div', name: 'if', tagName: _type0, result: p1.r(p1, p2, p1.fn2, p4, p5), props: _params1, level: 1 }
 ];
 p1.aa(_params1, _dataRefer1);
 p1.tf(_ex1, 'if', 'ex');
@@ -6023,7 +6023,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 
@@ -6051,7 +6051,7 @@ var _paramsE0 = {};
 
 var _ex0 = p1.x['spread'];
 var _dataRefer0 = [
-  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', result: p1.np }
+  p2.d('props'),{ _njOpts: true, _njFnsNo: 0, global: p1, context: p2, outputH: true, useString: false, exProps: _paramsE0, subExProps: p5, parentName: 'div', name: 'spread', tagName: _type0, result: p1.np }
 ];
 p1.tf(_ex0, 'spread', 'ex');
 

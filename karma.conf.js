@@ -1,5 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
 
 module.exports = function(config) {
   config.set({
@@ -62,7 +64,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
 
     // 设定终端上不输出 webpack 的打包信息
     webpackMiddleware: {
@@ -141,7 +149,7 @@ module.exports = function(config) {
       'karma-webpack',
       'karma-sourcemap-loader',
       'karma-spec-reporter',
-      'karma-phantomjs-launcher'
+      'karma-chrome-launcher'
     ],
 
     // Continuous Integration mode
