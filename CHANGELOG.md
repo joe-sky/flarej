@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v0.3.2] 2018.11.20
+
+* 🌟 改进`antd`、`antd-mobile`、`element`组件目录结构。
+
 ## [v0.3.1] 2018.8.15
 
 * 🌟 增加`flarej/lib/utils/fetchData`。
