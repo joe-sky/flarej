@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/tag/style/css';

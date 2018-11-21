@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/image-picker/style/css';

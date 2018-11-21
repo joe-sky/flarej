@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/date-picker-view/style/css';

@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/input-item/style/css';
