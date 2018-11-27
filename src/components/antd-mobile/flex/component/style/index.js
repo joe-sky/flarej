@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/flex/style/index';

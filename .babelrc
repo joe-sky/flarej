@@ -17,6 +17,27 @@
         ]
       ]
     },
+    "precompile": {
+      "presets": ["env"],
+      "plugins": [
+        ["nornj-loader", {
+          "extensions": [
+            ".t.html"
+          ]
+        }],
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "transform-object-assign",
+        [
+          "transform-es2015-classes",
+          { "loose": true }
+        ],
+        [
+          "transform-es2015-for-of",
+          { "loose": true }
+        ]
+      ]
+    },
     "webpack": {
       "presets": [
         ["env", { "modules": false }]

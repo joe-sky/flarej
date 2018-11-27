@@ -1,0 +1,1 @@
+import 'antd-mobile/lib/list/style/index';

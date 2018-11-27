@@ -1,12 +1,15 @@
-﻿import { Component, PropTypes } from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import merge from 'lodash/merge';
+import { bind, clear } from 'size-sensor';
 import {
   initOption,
   createChart,
   updateChart
 } from '../../utils/ecConfig';
 import '../../styles/echarts';
+import '../grid';
 import template from './ECharts.t.html';
 
 const EChartsEnhance = (ComposedComponent) => {
@@ -17,11 +20,22 @@ const EChartsEnhance = (ComposedComponent) => {
       option: PropTypes.object,
       data: PropTypes.array,
       title: PropTypes.string,
-      subTitle: PropTypes.string
+      subTitle: PropTypes.string,
+      expandOption: PropTypes.object,
+      theme: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+      ]),
+      showLoading: PropTypes.bool,
+      loadingOption: PropTypes.object,
+      onChartReady: PropTypes.func,
+      autoResize: PropTypes.bool
     };
 
     static defaultProps = {
-      update: true
+      update: true,
+      showLoading: false,
+      autoResize: true
     };
 
     constructor(props) {
@@ -36,11 +50,21 @@ const EChartsEnhance = (ComposedComponent) => {
 
     createChart() {
       this.chartOption = this.createOption();
-      this.chart = createChart(this.component.refs.chart.wrap, this.props.data, this.chartOption);
+      this.chart = createChart(this.component.refs.chart.wrap, this.props.data, this.chartOption, this.props.expandOption, this.props.theme);
     }
 
     componentDidMount() {
       this.createChart();
+
+      const { onChartReady, autoResize } = this.props;
+      const wrap = this.component.refs.chart.wrap;
+      if (autoResize && wrap) {
+        bind(wrap, () => {
+          this.chart.resize();
+        });
+      }
+
+      onChartReady && onChartReady(this.chart);
     }
 
     componentDidUpdate() {
@@ -53,7 +77,9 @@ const EChartsEnhance = (ComposedComponent) => {
         data,
         option,
         title,
-        subTitle
+        subTitle,
+        showLoading,
+        loadingOption
       } = this.props;
 
       updateChart(this.chart, data, Object.assign({}, this.chartOption, merge({
@@ -65,16 +91,36 @@ const EChartsEnhance = (ComposedComponent) => {
           trigger: 'axis'
         }
       }, option)));
+
+      if (showLoading) {
+        this.chart.showLoading(loadingOption);
+      }
+      else {
+        this.chart.hideLoading();
+      }
     }
 
     componentWillUnmount() {
-      this.chart && this.chart.dispose();
+      const wrap = this.component.refs.chart.wrap;
+      if (wrap) {
+        const { autoResize } = this.props;
+        if (autoResize) {
+          try {
+            clear(wrap);
+          } catch (ex) {
+            console.warn(ex);
+          }
+        }
+
+        this.chart && this.chart.dispose(wrap);
+      }
     }
 
     render() {
       const {
         className,
         style,
+        width,
         height,
         ...others
       } = this.props;
@@ -85,6 +131,9 @@ const EChartsEnhance = (ComposedComponent) => {
       });
 
       let styles = {};
+      if (width != null) {
+        styles.width = width;
+      }
       if (height != null) {
         styles.height = height;
       }

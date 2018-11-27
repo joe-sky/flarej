@@ -10,7 +10,7 @@ import '../njHelpers';
 import tmpls from './higherOrders.t.html';
 const win = window;
 
-export default function(ComposedComponent, initialProps) {
+export default function (ComposedComponent, initialProps) {
   return class Responsive extends Component {
     static propTypes = {
       responsive: PropTypes.bool,
@@ -30,6 +30,9 @@ export default function(ComposedComponent, initialProps) {
 
     constructor(props) {
       super(props);
+      if (props.compType == null) {
+        this.compType = guid();
+      }
 
       //Initialize
       this.bindResponsiveEvts();
@@ -63,7 +66,7 @@ export default function(ComposedComponent, initialProps) {
           if (isRh) { //响应式处理
             this.responsiveHandle();
           }
-        }, props.responsiveDelay, `ld_${props.compType}_responsive`, this);
+        }, props.responsiveDelay, `ld_${props.compType != null ? props.compType : this.compType}_responsive`, this);
       };
 
       on('resize', fn, win);
@@ -77,7 +80,7 @@ export default function(ComposedComponent, initialProps) {
       const props = this.props;
       let newState = this.state,
         handlers = [];
-        
+
       //处理响应参数
       [props.defaultResponsiveParam, props.responsiveParam].forEach(responsiveParam => {
         nj.each(responsiveParam, (rpp, media) => {
@@ -134,7 +137,7 @@ export default function(ComposedComponent, initialProps) {
 
       //移除响应式事件
       if (responsiveResize) {
-        off("resize", responsiveResize, win);
+        off('resize', responsiveResize, win);
       }
     }
 

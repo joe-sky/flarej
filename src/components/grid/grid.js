@@ -1,5 +1,6 @@
 ﻿import fj from '../../core';
 import { Component } from 'react';
+import nj from 'nornj';
 import { registerTmpl } from 'nornj-react';
 import classNames from 'classnames';
 import '../../njHelpers';
@@ -106,6 +107,8 @@ export class RowLeft extends Component {
   }
 }
 
+Row.Left = RowLeft;
+
 /**
  * Grid row right container
  */
@@ -117,6 +120,8 @@ export class RowRight extends Component {
     this.render = _createRowRender(this, 'fj-row-right');
   }
 }
+
+Row.Right = RowRight;
 
 /**
  * Grid col
@@ -213,3 +218,11 @@ Object.assign(fj, {
   Col,
   Clearfix
 });
+
+export default {
+  Row,
+  RowLeft,
+  RowRight,
+  Col,
+  Clearfix
+};

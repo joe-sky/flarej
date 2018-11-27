@@ -1,5 +1,6 @@
 ﻿import { Component, Children } from 'react';
 import PropTypes from 'prop-types';
+import nj from 'nornj';
 import { registerTmpl } from 'nornj-react';
 import { isMobile } from '../../utils/browsers';
 import { lazyDo } from '../../utils/delayOperate';

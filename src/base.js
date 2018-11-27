@@ -6,6 +6,7 @@ import * as math from './utils/math';
 import * as date from './utils/date';
 import responsive from './higherOrders/responsive';
 import Pagination from './components/pagination';
+import Grid from './components/grid';
 import Gesture from './components/gesture';
 import Carousel from './components/carousel';
 
@@ -14,7 +15,8 @@ Object.assign(fj, {
   responsive,
   Pagination,
   Gesture,
-  Carousel
+  Carousel,
+  Grid,
 });
 
 const _global = typeof self !== 'undefined' ? self : global;
@@ -29,6 +31,7 @@ export * from './components/grid';
 export {
   responsive,
   Pagination,
+  Grid,
   Gesture,
   regexp,
   sort,

@@ -1,6 +1,6 @@
 ﻿import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { registerComponent } from 'nornj';
+import nj, { registerComponent } from 'nornj';
 import { registerTmpl } from 'nornj-react';
 import classNames from 'classnames';
 import * as regExp from '../../utils/regexp';

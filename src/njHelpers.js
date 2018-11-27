@@ -18,7 +18,7 @@ registerExtension({
   cloneElem: options => cloneElement(options.result(), options.props),
 
   childrenEach: (children, options) => Children.map(children, child => options.result({
-    data: { '@child': child }
+    data: [{ '@child': child }]
   })),
 
   assign: options => Object.assign(options.result(), options.props.from)

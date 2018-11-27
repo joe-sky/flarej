@@ -25,15 +25,24 @@ class DemoPage extends React.Component {
 
 ### 支持的组件目录
 
+* ant-Row
+* ant-Col
 * ant-Affix
 * ant-Alert
+* ant-Anchor
+* ant-AutoComplete
+* ant-Avatar
+* ant-BackTop
+* ant-Badge
 * ant-Breadcrumb
 * ant-Button
 * ant-Card
 * ant-Cascader
 * ant-Checkbox
+* ant-Carousel
 * ant-Collapse
 * ant-DatePicker
+* ant-Divider
 * ant-Form
 * ant-Icon
 * ant-Input
@@ -55,7 +64,17 @@ class DemoPage extends React.Component {
 * ant-Tree
 * ant-TreeSelect
 * ant-Upload
-* (其他的antd组件待添加)
-
-
-* 各组件的详细使用方式请看[Ant Design 官方文档](https://ant.design/docs/react/introduce-cn)
+* ant-Steps
+* ant-Dropdown
+* ant-InputNumber
+* ant-Layout
+* ant-List
+* ant-LocaleProvider
+* ant-Mention
+* ant-Popconfirm
+* ant-Rate
+* ant-Spin
+* ant-Tag
+* ant-Timeline
+* ant-TimePicker
+* 与Ant Design官方文档支持的组件保持同步更新。各组件的详细使用方式请看[Ant Design 官方文档](https://ant.design/docs/react/introduce-cn)

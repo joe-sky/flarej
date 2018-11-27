@@ -220,18 +220,32 @@ gulp.task("lib", () => {
   gulp.src('./src/styles/**/*.less')
     .pipe(gulp.dest('./lib/styles'));
 
-  //Copy html files
-  gulp.src('./src/**/*.html')
-    .pipe(gulp.dest('./lib'));
-
   //Convert js files
   return gulp.src('./src/**/*.js')
     .pipe(env.set({
-      BABEL_ENV: 'development'
+      BABEL_ENV: 'precompile'
     }))
     .pipe(babel())
     .pipe(gulp.dest('./lib'));
 });
+
+// gulp.task("lib", () => {
+//   //Copy style files
+//   gulp.src('./src/styles/**/*.less')
+//     .pipe(gulp.dest('./lib/styles'));
+
+//   //Copy html files
+//   gulp.src('./src/**/*.html')
+//     .pipe(gulp.dest('./lib'));
+
+//   //Convert js files
+//   return gulp.src('./src/**/*.js')
+//     .pipe(env.set({
+//       BABEL_ENV: 'development'
+//     }))
+//     .pipe(babel())
+//     .pipe(gulp.dest('./lib'));
+// });
 
 //Default task
 let defaultTasks = ['build-js'];
@@ -240,4 +254,4 @@ if (argv.w) {
 } else {
   defaultTasks.push('build-all-css');
 }
-gulp.task('default', defaultTasks, () => gulp.start('lib'));
+gulp.task('default', defaultTasks);
