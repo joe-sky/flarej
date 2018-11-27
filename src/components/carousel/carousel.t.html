@@ -1,0 +1,23 @@
+﻿<template name="carousel">
+  <section class="fj-carousel-wrap {classType}">
+    {listItem}
+    
+    <#if {arrows}>
+    <div class="fj-carousel-arrow arrow-left" onClick="{goLeft}"><i class="fa fa-chevron-left"></i></div>
+    </#if>
+    <#if {arrows}>
+    <div class="fj-carousel-arrow arrow-right" onClick="{goRight}"><i class="fa fa-chevron-right"></i></div>
+    </#if>
+
+    <#if {dots}>
+    <div class="fj-carousel-dots-box">
+      <div class="fj-carousel-dots">
+        <#each {dotsItem}>
+        <div key="{@index}" class="fj-carousel-dots-item {active}">{@index}</div>
+        </#each>
+      </div>
+    </div>
+    </#if>
+
+  </section>
+</template>

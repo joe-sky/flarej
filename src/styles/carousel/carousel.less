@@ -1,0 +1,78 @@
+﻿@import "../common/base";
+
+.carousel-box{
+  width: 645px;
+  height: 292px;
+  overflow: hidden;
+}
+
+.@{ns}carousel-wrap{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+
+  ul{
+    padding: 0;
+  }
+
+  .fj-carousel-arrow{
+    width: 40px;
+    height: 60px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 120px;
+    text-align: center;
+    color: #fff;
+    line-height: 60px;
+    cursor: pointer;
+    z-index: 15;
+  }
+  .arrow-left{
+    left: 0;
+  }
+  .arrow-right{
+    right: 0;
+  }
+
+  .fj-carousel-dots-box{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    .fj-carousel-dots-item{
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 50%;
+      color: #000;
+      cursor: pointer;
+      text-indent: -999px;
+      margin-right: 15px;
+    }
+    .active{
+      background: #46d9f9;
+    }
+  }
+}
+
+/*动画效果*/
+.carousel-fade{
+  ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  li{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
