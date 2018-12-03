@@ -27,13 +27,14 @@
       </Container>
     </script>
   </div>
-  <script src="../node_modules/react/dist/react.js"></script>
-  <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+  <script src="../node_modules/react/umd/react.development.js"></script>
+  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="../node_modules/create-react-class/create-react-class.js"></script>
   <script src="../node_modules/nornj/dist/nornj.js"></script>
   <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
   <script src="../dist/js/flarej.js"></script>
   <script>
-    nj.registerComponent('Container', React.createClass({
+    nj.registerComponent('Container', createReactClass({
       getInitialState: function () {
         return {
           msg: 'touch me ' + Date.now()

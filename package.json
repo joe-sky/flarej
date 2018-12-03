@@ -70,6 +70,7 @@
     "babel-register": "^6.11.5",
     "bootstrap": "^4.0.0-alpha.6",
     "codecov": "^3.0.4",
+    "create-react-class": "^15.6.3",
     "css-loader": "^0.28.7",
     "echarts": "^4.1.0",
     "echarts-liquidfill": "^1.0.3",
