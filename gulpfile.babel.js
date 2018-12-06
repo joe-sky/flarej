@@ -143,6 +143,13 @@ gulp.task('build-js', () => {
               delimiters: 'react'
             }
           }]
+        }, {
+          test: /\.less$/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'less-loader'
+          ]
         }]
       },
       plugins

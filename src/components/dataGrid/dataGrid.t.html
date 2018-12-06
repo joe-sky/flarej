@@ -1,0 +1,84 @@
+﻿<div class="fj-dg">
+  <#if {showHead}>
+    <fj-row class="fj-dg-head">
+      <fj-col l=9 m=8 s=8>
+        <#props>
+          <#if {filterInputPosition == 'left'}>
+            <@push>3</@push>
+            <@pushM>4</@pushM>
+            <@pushS>4</@pushS>
+            <@class>{'colLeft'}</@class>
+          </#if>
+        </#props>
+        <#if {showPageSize}>
+          <fj-PageSize prefix=每页显示 suffix=条记录 setPageSize={true} {pageSize} {pageSizes} onChange={sizeChange} />
+        </#if>
+      </fj-col>
+      <fj-col l=3 m=4 s=4>
+        <#props>
+          <#if {filterInputPosition == 'left'}>
+            <@pull>9</@pull>
+            <@pullM>8</@pullM>
+            <@pullS>8</@pullS>
+          </#if>
+        </#props>
+        <#if {showDataFilter}>
+          <div class="input dataFilter {filterInputPosition == 'left' ?: ('left', '')}">
+            <ant-Input placeholder=可筛选表格数据 onChange={searchData} value={searchText} ref={searchDataRef} />
+          </div>
+        </#if>
+        <#if {showColumnFilter}>
+          <div class="input columnFilter {filterInputPosition == 'left' ?: ('left', '')}">
+            <ant-Tooltip overlayClassName="fj-dg-columnFilterTooltip" placement="bottomRight" trigger="click">
+              <@title>
+                <div class="fj-dg-cfContainer">
+                  <#each {props.columns}>
+                    <fj-row key={@index} class="cfRow">
+                      <fj-rowleft class="cfTitle" width={100}>{textTitle != null ?: (textTitle, title)}</fj-rowleft>
+                      <fj-row left={100}>
+                        <#each {children}>
+                          <ant-Checkbox {key} value={key} checked="{!columnFilterHideKeys.has(key)}" onChange={onCfChange}>{this.textTitle != null ?: (this.textTitle, this.title)}</ant-Checkbox>
+                        </#each>
+                      </fj-row>
+                    </fj-row>
+                  </#each>
+                </div>
+              </@title>
+              <ant-Button onClick={onColumnFilterShow}>显示字段</ant-Button>
+            </ant-Tooltip>
+          </div>
+        </#if>
+      </fj-col>
+    </fj-row>
+  </#if>
+  <ant-Table {...tableProps}
+    {columns}
+    dataSource={tableData}
+    {locale}
+    {rowSelection}
+    pagination={false}
+    {bordered}
+    loading={loading}
+    ref="dataTable" />
+  <fj-row class="fj-dg-countInfo">
+    <fj-rowLeft width=200>
+      <#if {showDataCount}>
+        <fj-PageDataCount {count} key="PageDataCount" />
+        <fj-PageCount {count} {pageSize} prefix="{'&nbsp;/&nbsp;共'}" key="PageCount" />
+      </#if>
+    </fj-rowLeft>
+    <fj-row left=200>
+      <fj-Pagination {...paginationProps}
+        class="fj-dg-pagination"
+        ref=pagination
+        showPageSize={false}
+        showPageCount={false}
+        showCount={false}
+        {pageSize}
+        {pageIndex}
+        {count}
+        responsive={false}
+        onChange="{pageChange}" />
+    </fj-row>
+  </fj-row>
+</div>

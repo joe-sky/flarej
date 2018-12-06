@@ -8,13 +8,15 @@ import responsive from './higherOrders/responsive';
 import Pagination from './components/pagination';
 import Grid from './components/grid';
 import Gesture from './components/gesture';
+import DataGrid from './components/dataGrid';
 
 Object.assign(fj, {
   config,
   responsive,
   Pagination,
   Grid,
-  Gesture
+  Gesture,
+  DataGrid
 });
 
 const _global = typeof self !== 'undefined' ? self : global;
@@ -31,6 +33,7 @@ export {
   Pagination,
   Grid,
   Gesture,
+  DataGrid,
   regexp,
   sort,
   math,

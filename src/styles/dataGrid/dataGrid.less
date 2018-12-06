@@ -1,0 +1,94 @@
+﻿@import "../common/base";
+
+.@{ns}dg-head {
+  height: 25px;
+  margin-bottom: 10px;
+
+  .input {
+    display: inline-block;
+    float: right;
+    position: relative;
+    margin-left: 5px;
+
+    &.left {
+      float: left;
+      margin-right: 5px;
+    }
+  }
+
+  .input input {
+    padding-left: 23px;
+  }
+
+  .input.dataFilter:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: .875rem;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    z-index: 1;
+    color: #b0b0b0;
+  }
+
+  .colLeft {
+    .fj-pagn-part {
+      float: right;
+    }
+  }
+
+  .ant-input-wrapper {
+    display: inline-block;
+    width: 175px;
+  }
+
+  .ant-select-selection--multiple {
+    height: 30px;
+    overflow: hidden;
+  }
+}
+
+.@{ns}dg-pagination {
+  margin-top: 5px;
+}
+
+.@{ns}dg-countInfo {
+  margin-top: 7px;
+}
+
+.@{ns}dg-cfContainer {
+  min-width: 400px;
+  padding: 5px 10px;
+
+  .cfRow {
+    min-height: 30px;
+    line-height: 30px;
+  }
+  
+  .cfTitle {
+    font-weight: bold;
+  }
+}
+
+.@{ns}dg-columnFilterTooltip {
+  &.ant-tooltip {
+    max-width: 800px;
+  }
+
+  &.ant-tooltip-placement-top .ant-tooltip-arrow,
+  &.ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+  &.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+    border-top-color: #fff;
+  }
+
+  &.ant-tooltip-placement-bottom .ant-tooltip-arrow,
+  &.ant-tooltip-placement-bottomLeft .ant-tooltip-arrow,
+  &.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+    border-bottom-color: #fff;
+  }
+
+  .ant-tooltip-inner {
+    color: #343235;
+    background-color: #fff;
+  }
+}
