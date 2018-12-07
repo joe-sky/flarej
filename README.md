@@ -39,6 +39,7 @@
   * [Clearfix](https://github.com/joe-sky/flarej/blob/master/src/components/grid/grid.js#L182)
 * [Gesture(手势)](https://github.com/joe-sky/flarej/blob/master/examples/gesture.html)
 * [DataGrid(数据表格)](https://github.com/joe-sky/flarej/blob/master/examples/dataGrid.html)
+  * [在线示例](https://codepen.io/joe_sky/pen/GwVKQO)
 
 可以使用[babel-plugin-import](https://github.com/ant-design/babel-plugin-import)按需引入以上组件，`.babelrc`配置：
 

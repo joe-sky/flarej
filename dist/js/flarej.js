@@ -38775,7 +38775,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0_nornj__["registerComponent"])({
 var nj = __webpack_require__(10);
 
 module.exports = nj.compileH({
-  _njTmplKey: -1820103414,
+  _njTmplKey: -1609017342,
   useString: false,
   fn3: function anonymous(p1,p2,p3,p4,p5
 /*``*/) {
@@ -38790,7 +38790,7 @@ return '4';
   fn5: function anonymous(p1,p2,p3,p4,p5
 /*``*/) {
 
-return '4';
+return '6';
 },
   fn6: function anonymous(p1,p2,p3,p4,p5
 /*``*/) {
@@ -38863,7 +38863,7 @@ return '8';
   fn11: function anonymous(p1,p2,p3,p4,p5
 /*``*/) {
 
-return '8';
+return '6';
 },
   fn8: function anonymous(p1,p2,p3,p4,p5
 /*``*/) {
@@ -39196,7 +39196,7 @@ var _type1 = p1.e('fj-col', p1, 'fj-col', p2);
 var _params1 = {
   'l': '9',
   'm': '8',
-  's': '8'
+  's': '6'
 };
 var _paramsE0 = {};
 
@@ -39236,7 +39236,7 @@ var _type2 = p1.e('fj-col', p1, 'fj-col', p2);
 var _params2 = {
   'l': '3',
   'm': '4',
-  's': '4'
+  's': '6'
 };
 var _paramsE1 = {};
 
