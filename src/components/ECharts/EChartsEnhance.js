@@ -50,14 +50,14 @@ const EChartsEnhance = (ComposedComponent) => {
 
     createChart() {
       this.chartOption = this.createOption();
-      this.chart = createChart(this.component.refs.chart.wrap, this.props.data, this.chartOption, this.props.expandOption, this.props.theme);
+      this.chart = createChart(this.component.chart.current.parentNode, this.props.data, this.chartOption, this.props.expandOption, this.props.theme);
     }
 
     componentDidMount() {
       this.createChart();
 
       const { onChartReady, autoResize } = this.props;
-      const wrap = this.component.refs.chart.wrap;
+      const wrap = this.component.chart.current.parentNode;
       if (autoResize && wrap) {
         bind(wrap, () => {
           this.chart.resize();
@@ -101,7 +101,7 @@ const EChartsEnhance = (ComposedComponent) => {
     }
 
     componentWillUnmount() {
-      const wrap = this.component.refs.chart.wrap;
+      const wrap = this.component.chart.current.parentNode;
       if (wrap) {
         const { autoResize } = this.props;
         if (autoResize) {

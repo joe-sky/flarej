@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { registerComponent } from 'nornj';
 import EChartsEnhance from './EChartsEnhance';
@@ -14,6 +14,11 @@ class ScatterChart extends Component {
   static defaultProps = {
     type: 'scatter'
   };
+
+  constructor(props) {
+    super(props);
+    this.chart = React.createRef();
+  }
 
   render() {
     return template.chart(this);

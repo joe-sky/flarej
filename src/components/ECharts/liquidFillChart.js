@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { registerComponent } from 'nornj';
 import EChartsEnhance from './EChartsEnhance';
@@ -13,6 +13,11 @@ class LiquidFillChart extends Component {
     static defaultProps = {
         type: 'liquidFill'
     };
+
+    constructor(props) {
+      super(props);
+      this.chart = React.createRef();
+    }
 
     render() {
         return template.chart(this);
