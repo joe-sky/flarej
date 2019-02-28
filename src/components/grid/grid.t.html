@@ -1,6 +1,6 @@
 <template name="row">
   <div {...props} class={classes} style={styles} ref={wrap}>
-    <#if {gutter && (gutter > 0)}>
+    <#if {gutter && gutter > 0}>
       <#childrenEach {children}>
         <#if {@child != null}>
           <#cloneElem>

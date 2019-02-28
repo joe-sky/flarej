@@ -178,7 +178,7 @@ describe('Antd spec', function () {
 
   describe('default', () => {
     const defaultWrapper1 = mount(nj`<ant-Modal visible={true}/>`());
-    console.log(5, defaultWrapper1.html());
+    //console.log(5, defaultWrapper1.html());
     it('its props visible equal to true', () => {
       expect(defaultWrapper1.props().visible).toEqual(true);
     });

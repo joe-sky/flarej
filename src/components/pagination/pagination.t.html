@@ -127,7 +127,7 @@
     <#if {setPageSize}>
       <select class="fj-form-elem fj-pagn-pagesize" value={pageSize} onChange={pageSizeChange}>
         <#each {pageSizes}>
-          <option key={@index} value={this}>{this}</option>
+          <option key={@index} value={@item}>{@item}</option>
         </#each>
       </select>
       <#else>

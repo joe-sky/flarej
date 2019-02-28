@@ -23,21 +23,21 @@
           </#if>
         </#props>
         <#if {showDataFilter}>
-          <div class="input dataFilter {filterInputPosition == 'left' ?: ('left', '')}">
+          <div class="input dataFilter {filterInputPosition == 'left' ? 'left' : ''}">
             <ant-Input placeholder=可筛选表格数据 onChange={searchData} value={searchText} ref={searchDataRef} />
           </div>
         </#if>
         <#if {showColumnFilter}>
-          <div class="input columnFilter {filterInputPosition == 'left' ?: ('left', '')}">
+          <div class="input columnFilter {filterInputPosition == 'left' ? 'left' : ''}">
             <ant-Tooltip overlayClassName="fj-dg-columnFilterTooltip" placement="bottomRight" trigger="click">
               <@title>
                 <div class="fj-dg-cfContainer">
                   <#each {props.columns}>
                     <fj-row key={@index} class="cfRow">
-                      <fj-rowleft class="cfTitle" width={100}>{textTitle != null ?: (textTitle, title)}</fj-rowleft>
+                      <fj-rowleft class="cfTitle" width={100}>{textTitle != null ? textTitle : title}</fj-rowleft>
                       <fj-row left={100}>
                         <#each {children}>
-                          <ant-Checkbox {key} value={key} checked="{!columnFilterHideKeys.has(key)}" onChange={onCfChange}>{this.textTitle != null ?: (this.textTitle, this.title)}</ant-Checkbox>
+                          <ant-Checkbox {key} value={key} checked="{!columnFilterHideKeys.has(key)}" onChange={onCfChange}>{@item.textTitle != null ? @item.textTitle : @item.title}</ant-Checkbox>
                         </#each>
                       </fj-row>
                     </fj-row>
