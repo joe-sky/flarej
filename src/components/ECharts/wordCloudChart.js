@@ -19,6 +19,11 @@ class WordCloudChart extends Component {
     this.chart = React.createRef();
   }
 
+  componentDidUpdate() {
+    const { chartInstance } = this.props;
+    chartInstance.clear();
+  }
+
   render() {
     return template.chart(this);
   }
