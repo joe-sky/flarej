@@ -43,6 +43,11 @@ const EChartsEnhance = (ComposedComponent) => {
       this.component = null;
     }
 
+    getWrap() {
+      const current = this.component.chart.current;
+      return current.wrap || (current.wrappedInstance && current.wrappedInstance.wrap) || current.parentNode;
+    }
+
     createOption() {
       const { option, title, subTitle } = this.props;
       return merge(initOption(this.component.props.type, title, subTitle), option);
@@ -50,14 +55,14 @@ const EChartsEnhance = (ComposedComponent) => {
 
     createChart() {
       this.chartOption = this.createOption();
-      this.chart = createChart(this.component.chart.current.wrap || this.component.chart.current.parentNode, this.props.data, this.chartOption, this.props.expandOption, this.props.theme);
+      this.chart = createChart(this.getWrap(), this.props.data, this.chartOption, this.props.expandOption, this.props.theme);
     }
 
     componentDidMount() {
       this.createChart();
 
       const { onChartReady, autoResize } = this.props;
-      const wrap = this.component.chart.current.wrap || this.component.chart.current.parentNode;
+      const wrap = this.getWrap();
       if (autoResize && wrap) {
         bind(wrap, () => {
           this.chart.resize();
@@ -101,7 +106,7 @@ const EChartsEnhance = (ComposedComponent) => {
     }
 
     componentWillUnmount() {
-      const wrap = this.component.chart.current.wrap || this.component.chart.current.parentNode;
+      const wrap = this.getWrap();
       if (wrap) {
         const { autoResize } = this.props;
         if (autoResize) {
