@@ -1,198 +1,208 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-  <link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="../dist/css/flarej.css" rel="stylesheet" />
-  <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
-</head>
-<body>
-  <div>
-    <script type="text/nornj" data-auto id="t1">
-      <Container>
-        <#tmpl>
-          <div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <#each {data}>
-                  <tr key={no}>
-                    <th scope="row">{no}</th>
-                    <td>{firstName}</td>
-                    <td>{lastName}</td>
-                    <td>{username}</td>
-                  </tr>
-                </#each>
-              </tbody>
-            </table>
-            <fj-Pagination setPageSize="{true}"
-                           {pageIndex}
-                           {pageSize}
-                           {pageSizes}
-                           {count}
-                           responsive="{true}"
-                           responsiveParam="{rp}"
-                           showDataCount="{true}"
-                           showRefresh="{true}"
-                           showPageCount="{true}"
-                           hasFirst={true}
-                           hasLast={true}
-                           onChange="{pagnChange}">
-            </fj-Pagination>
-          </div>
-        </#tmpl>
-      </Container>
-    </script>
-  </div>
-  <script src="../node_modules/react/umd/react.development.js"></script>
-  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
-  <script src="../node_modules/create-react-class/create-react-class.js"></script>
-  <script src="../node_modules/nornj/dist/nornj.js"></script>
-  <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
-  <script src="../dist/js/flarej.js"></script>
-  <script src="./vendor/lodash.min.js"></script>
-  <script src="./vendor/aviator.min.js"></script>
-  <script>
-    var datas = _.times(500, function (i) {
-      var no = i + 1;
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../node_modules/font-awesome/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link href="../dist/css/flarej.css" rel="stylesheet" />
+    <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/create-react-class/create-react-class.js"></script>
+    <script src="../node_modules/nornj/dist/nornj.js"></script>
+    <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
+    <script src="../dist/js/flarej.js"></script>
+    <script src="./vendor/lodash.min.js"></script>
+    <script src="./vendor/aviator.min.js"></script>
+    <script>
+      var datas = _.times(500, function(i) {
+        var no = i + 1;
 
-      return {
-        no: no,
-        firstName: 'Mark' + no,
-        lastName: 'Thornton' + no,
-        username: '@twitter' + no
-      }
-    });
-
-    nj.registerComponent('Container', createReactClass({
-      getInitialState: function () {
         return {
-          pageSize: 5,
-          pageIndex: 1,
-          count: datas.length
+          no: no,
+          firstName: "Mark" + no,
+          lastName: "Thornton" + no,
+          username: "@twitter" + no
         };
-      },
-      componentWillMount: function () {
-        var appTarget = {
-          index: function (request, options) {
-            console.log(request);
-          }.bind(this)
-        };
+      });
 
-        var pagesTarget = {
-          firstPage: function (request, options) {
-            this.resetData(1);
-          }.bind(this),
-          no: function (request, options) {
-            this.resetData(request.params.no);
-          }.bind(this)
-        };
-
-        Aviator.pushStateEnabled = false;
-        Aviator.setRoutes({
-          target: appTarget,
-          '/': 'index',
-          '/page': {
-            target: pagesTarget,
-            '/': 'firstPage',
-            '/:no': 'no'
-          }
-        });
-
-        Aviator.dispatch();
-      },
-      resetData: function (pageIndex, pageSize) {
-        pageIndex = parseInt(pageIndex, 10);
-        pageSize = pageSize != null ? pageSize : this.state.pageSize;
-
-        var start = (pageIndex - 1) * pageSize;
-        var end = pageIndex * pageSize;
-        var data = datas.filter(function (obj, i) {
-          if (i >= start && i < end) {
-            return true;
-          }
-        });
-
-        this.setState({
-          pageIndex: pageIndex,
-          pageSize: pageSize,
-          data: data
-        });
-      },
-      pagnChange: function (pageIndex, pageSize, isInit) {
-        this.resetData(pageIndex, pageSize);
-
-        var silent = true;
-        if (!this._routerStarted) {  //第一次加载时需要触发历史事件，之后点击分页按钮时不触发历史事件
-          silent = false;
-          this._routerStarted = false;
-        }
-        Aviator.navigate('/page/' + pageIndex, { silent: silent });
-      },
-      render: function () {
-        //console.log(nj.templates.t1._mainT1.toString());
-        return this.props.tmpls[0]({
-          data: this.state.data,
-          pageSizes: [20, 5, 50],
-          pageSize: this.state.pageSize,
-          pageIndex: this.state.pageIndex,
-          count: this.state.count,
-          rp: {
-            '(max-width: 768px)': {
-              //preHandler: (isInit, newState) => {
-              //  newState.objId = 5000;
-              //  return newState;
-              //},
-              state: {
-                //showCount: true
-              },
-              handler: function (isInit) {
-                //alert(isInit);
-              },
-              delay: 100
-            },
-            '(min-width: 769px)': {
-              state: {
-                // hasBtnGo: false,
-                // showCount: false
-              }
-            }
+      nj.registerComponent(
+        "Container",
+        createReactClass({
+          getInitialState: function() {
+            return {
+              pageSize: 5,
+              pageIndex: 1,
+              count: datas.length
+            };
           },
-          //list: [0, 1, 2],
-          pagnChange: this.pagnChange,
-          click: function () {
-            this.setState({ pageCount: Date.now() });
-          }.bind(this)
-        });
-      }
-    }));
+          componentWillMount: function() {
+            var appTarget = {
+              index: function(request, options) {
+                console.log(request);
+              }.bind(this)
+            };
 
-    //nj.setInitTagData({
-    //  pageCount: 10,
-    //  rp: {
-    //    '(max-width: 768px)': {
-    //      state: { objId: 11000 },
-    //      handler: function (isInit) {
-    //        //alert(isInit);
-    //      }
-    //    },
-    //    '(min-width: 769px)': {
-    //      state: { objId: 21000 }
-    //    }
-    //  }
-    //});
-  </script>
-</body>
+            var pagesTarget = {
+              firstPage: function(request, options) {
+                this.resetData(1);
+              }.bind(this),
+              no: function(request, options) {
+                this.resetData(request.params.no);
+              }.bind(this)
+            };
+
+            Aviator.pushStateEnabled = false;
+            Aviator.setRoutes({
+              target: appTarget,
+              "/": "index",
+              "/page": {
+                target: pagesTarget,
+                "/": "firstPage",
+                "/:no": "no"
+              }
+            });
+
+            Aviator.dispatch();
+          },
+          resetData: function(pageIndex, pageSize) {
+            pageIndex = parseInt(pageIndex, 10);
+            pageSize = pageSize != null ? pageSize : this.state.pageSize;
+
+            var start = (pageIndex - 1) * pageSize;
+            var end = pageIndex * pageSize;
+            var data = datas.filter(function(obj, i) {
+              if (i >= start && i < end) {
+                return true;
+              }
+            });
+
+            this.setState({
+              pageIndex: pageIndex,
+              pageSize: pageSize,
+              data: data
+            });
+          },
+          pagnChange: function(pageIndex, pageSize, isInit) {
+            this.resetData(pageIndex, pageSize);
+
+            var silent = true;
+            if (!this._routerStarted) {
+              //第一次加载时需要触发历史事件，之后点击分页按钮时不触发历史事件
+              silent = false;
+              this._routerStarted = false;
+            }
+            Aviator.navigate("/page/" + pageIndex, { silent: silent });
+          },
+          render: function() {
+            //console.log(nj.templates.t1._mainT1.toString());
+            return nj`<div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <each {data}>
+                    <tr key={no}>
+                      <th scope="row">{no}</th>
+                      <td>{firstName}</td>
+                      <td>{lastName}</td>
+                      <td>{username}</td>
+                    </tr>
+                  </each>
+                </tbody>
+              </table>
+              <fj-Pagination setPageSize="{true}"
+                             {pageIndex}
+                             {pageSize}
+                             {pageSizes}
+                             {count}
+                             responsive="{true}"
+                             responsiveParam="{rp}"
+                             showDataCount="{true}"
+                             showRefresh="{true}"
+                             showPageCount="{true}"
+                             hasFirst={true}
+                             hasLast={true}
+                             onChange="{pagnChange}">
+              </fj-Pagination>
+            </div>`({
+              data: this.state.data,
+              pageSizes: [20, 5, 50],
+              pageSize: this.state.pageSize,
+              pageIndex: this.state.pageIndex,
+              count: this.state.count,
+              rp: {
+                "(max-width: 768px)": {
+                  //preHandler: (isInit, newState) => {
+                  //  newState.objId = 5000;
+                  //  return newState;
+                  //},
+                  state: {
+                    //showCount: true
+                  },
+                  handler: function(isInit) {
+                    //alert(isInit);
+                  },
+                  delay: 100
+                },
+                "(min-width: 769px)": {
+                  state: {
+                    // hasBtnGo: false,
+                    // showCount: false
+                  }
+                }
+              },
+              //list: [0, 1, 2],
+              pagnChange: this.pagnChange,
+              click: function() {
+                this.setState({ pageCount: Date.now() });
+              }.bind(this)
+            });
+          }
+        })
+      );
+
+      //nj.setInitTagData({
+      //  pageCount: 10,
+      //  rp: {
+      //    '(max-width: 768px)': {
+      //      state: { objId: 11000 },
+      //      handler: function (isInit) {
+      //        //alert(isInit);
+      //      }
+      //    },
+      //    '(min-width: 769px)': {
+      //      state: { objId: 21000 }
+      //    }
+      //  }
+      //});
+
+      ReactDOM.render(
+        nj`<Container />`(),
+        document.querySelector("#container")
+      );
+    </script>
+  </body>
 </html>

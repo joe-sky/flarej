@@ -1,54 +1,59 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="../dist/css/flarej.css" rel="stylesheet" />
-  <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
-  <style>
-    .h100 {
-      height: 100px;
-      background-color: blue;
-    }
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="../dist/css/flarej.css" rel="stylesheet" />
+    <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
+    <style>
+      .h100 {
+        height: 100px;
+        background-color: blue;
+      }
 
-    .h200 {
-      height: 200px;
-      background-color: green;
-    }
-  </style>
-</head>
-<body>
-  <section>
-    <script type="text/nornj" data-auto>
-      <div>
-        <fj-RowLeft width="100" style="height:200px;background-color:purple;">
-          100
-        </fj-RowLeft>
-        <fj-Row gutter={20} left="100" right="100" style="color:yellow;">
-          <fj-Col l="3" m="3" push="1" pushM="2" pushS="2" class="h100">1</fj-Col>
-          <fj-Col l="3" m="3" class="h200">2</fj-Col>
-          <fj-Col l="3" m="3" class="h100" style="background-color:gray;">3</fj-Col>
-          <fj-Col l="3" m="3" class="h100">4</fj-Col>
-          <fj-Clearfix />
-          <fj-Col l="3" m="3" class="h100">1</fj-Col>
-          <fj-Col l="3" m="3" class="h100">2</fj-Col>
-          <fj-Col l="3" m="3" class="h100">3</fj-Col>
-          <fj-Col l="3" m="3" class="h100">4</fj-Col>
-        </fj-Row>
-        <fj-RowRight width="100" style="height:200px;background-color:purple;">
-          100
-        </fj-RowRight>
-      </div>
+      .h200 {
+        height: 200px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="container"></section>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/create-react-class/create-react-class.js"></script>
+    <script src="../node_modules/nornj/dist/nornj.js"></script>
+    <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
+    <script src="../dist/js/flarej.js"></script>
+    <script>
+      ReactDOM.render(
+        nj`<div>
+          <fj-RowLeft width="100" style="height:200px;background-color:purple;">
+            100
+          </fj-RowLeft>
+          <fj-Row gutter={20} left="100" right="100" style="color:yellow;">
+            <fj-Col l="3" m="3" push="1" pushM="2" pushS="2" class="h100">1</fj-Col>
+            <fj-Col l="3" m="3" class="h200">2</fj-Col>
+            <fj-Col l="3" m="3" class="h100" style="background-color:gray;">3</fj-Col>
+            <fj-Col l="3" m="3" class="h100">4</fj-Col>
+            <fj-Clearfix />
+            <fj-Col l="3" m="3" class="h100">1</fj-Col>
+            <fj-Col l="3" m="3" class="h100">2</fj-Col>
+            <fj-Col l="3" m="3" class="h100">3</fj-Col>
+            <fj-Col l="3" m="3" class="h100">4</fj-Col>
+          </fj-Row>
+          <fj-RowRight width="100" style="height:200px;background-color:purple;">
+            100
+          </fj-RowRight>
+        </div>`(),
+        document.querySelector("#container")
+      );
     </script>
-  </section>
-  <script src="../node_modules/react/umd/react.development.js"></script>
-  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
-  <script src="../node_modules/create-react-class/create-react-class.js"></script>
-  <script src="../node_modules/nornj/dist/nornj.js"></script>
-  <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
-  <script src="../dist/js/flarej.js"></script>
-</body>
+  </body>
 </html>

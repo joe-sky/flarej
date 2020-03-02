@@ -1,5 +1,5 @@
 {
-  "presets": [ "stage-1", "react" ],
+  "presets": ["stage-1", "react"],
   "env": {
     "development": {
       "presets": ["env"],
@@ -7,53 +7,42 @@
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-object-assign",
-        [
-          "transform-es2015-classes",
-          { "loose": true }
-        ],
-        [
-          "transform-es2015-for-of",
-          { "loose": true }
-        ]
+        ["transform-es2015-classes", { "loose": true }],
+        ["transform-es2015-for-of", { "loose": true }]
       ]
     },
     "precompile": {
       "presets": ["env"],
       "plugins": [
-        ["nornj-loader", {
-          "extensions": [
-            ".t.html"
-          ]
-        }],
+        [
+          "nornj-loader",
+          {
+            "extensions": [".t.html"],
+            "delimiters": {
+              "start": "{",
+              "end": "}",
+              "extension": "#",
+              "prop": "@",
+              "strProp": "@@",
+              "comment": ""
+            }
+          }
+        ],
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-object-assign",
-        [
-          "transform-es2015-classes",
-          { "loose": true }
-        ],
-        [
-          "transform-es2015-for-of",
-          { "loose": true }
-        ]
+        ["transform-es2015-classes", { "loose": true }],
+        ["transform-es2015-for-of", { "loose": true }]
       ]
     },
     "webpack": {
-      "presets": [
-        ["env", { "modules": false }]
-      ],
+      "presets": [["env", { "modules": false }]],
       "plugins": [
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-object-assign",
-        [
-          "transform-es2015-classes",
-          { "loose": true }
-        ],
-        [
-          "transform-es2015-for-of",
-          { "loose": true }
-        ]
+        ["transform-es2015-classes", { "loose": true }],
+        ["transform-es2015-for-of", { "loose": true }]
       ]
     }
   }

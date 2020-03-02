@@ -1,6 +1,6 @@
 {
   "name": "flarej",
-  "version": "0.6.0-alpha.6",
+  "version": "0.6.0",
   "description": "An ui components library based on React and NornJ",
   "main": "lib/base.js",
   "files": [
@@ -106,9 +106,9 @@
     "karma-webpack": "^2.0.3",
     "less-loader": "^4.0.5",
     "natives": "^1.1.6",
-    "nornj": "^5.0.0-alpha.7",
-    "nornj-loader": "^0.4.2",
-    "nornj-react": "^5.0.0-alpha.7",
+    "nornj": "^5.1.1",
+    "nornj-loader": "^5.1.1",
+    "nornj-react": "^5.1.1",
     "postcss-loader": "^2.0.8",
     "prop-types": "^15.6.0",
     "puppeteer": "^1.7.0",

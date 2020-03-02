@@ -135,12 +135,30 @@ gulp.task('build-js', () => {
           }],
           exclude: /node_modules/
         }, {
-          test: /\.t.html(\?[\s\S]+)*$/,
+          test: /\.t\.html(\?[\s\S]+)*$/,
           use: [{
             loader: 'nornj-loader',
             options: {
               outputH: true,
-              delimiters: 'react'
+              delimiters: {
+                start: '{',
+                end: '}',
+                extension: '#',
+                prop: '@',
+                strProp: '@@',
+                comment: ''
+              },
+              filterConfig: {
+                clickBtn: {
+                  hasOptions: true
+                },
+                isCurrentPage: {
+                  hasOptions: true
+                },
+                showPartPage: {
+                  hasOptions: true
+                }
+              }
             }
           }]
         }, {

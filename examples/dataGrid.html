@@ -1,314 +1,360 @@
 ﻿<!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      href="../node_modules/font-awesome/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link href="../dist/css/flarej.css" rel="stylesheet" />
+    <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="../dist/css/flarej.css" rel="stylesheet" />
-  <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
-</head>
-
-<body>
-  <div>
-    <script type="text/nornj" data-auto>
-      <Container>
-        <#tmpl>
-          <div style="padding:10px;">
-            <fj-DataGrid {paginationProps}
-                         :tableProps="{
-                           scroll: {
-                             x: 2750
-                           }
-                         }"
-                         {onTableScrollBottom}
-                         {loading}
-                         localMode={true}
-                         showPageSize
-                         showDataCount
-                         showDataFilter
-                         showColumnFilter
-                         {columns}
-                         {rowSelection}
-                         {data}
-                         {onPageChange}
-                         {count}
-                         {pageIndex}
-                         {pageSize} />
-          </div>
-        </#tmpl>
-      </Container>
-    </script>
-  </div>
-  <script src="../node_modules/react/umd/react.development.js"></script>
-  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
-  <script src="../node_modules/create-react-class/create-react-class.js"></script>
-  <script src="../node_modules/nornj/dist/nornj.js"></script>
-  <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
-  <script src="../dist/js/flarej.js"></script>
-  <script src="./vendor/lodash.min.js"></script>
-  <script>
-    nj.registerComponent('Container', createReactClass({
-      getInitialState: function () {
-        return {
-          selectedRowKeys: [],
-          count: 100,
-          pageIndex: 1,
-          pageSize: 15,
-          data: _.times(100, function (i) {
-            let num = i + 1;
-            let random = i + 10;//Math.ceil(Math.random()*7);
-
+  <body>
+    <div id="container"></div>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/create-react-class/create-react-class.js"></script>
+    <script src="../node_modules/nornj/dist/nornj.js"></script>
+    <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
+    <script src="../dist/js/flarej.js"></script>
+    <script src="./vendor/lodash.min.js"></script>
+    <script>
+      nj.registerComponent(
+        "Container",
+        createReactClass({
+          getInitialState: function() {
             return {
-              key: num,
-              Column1: random + num + '%',
-              Column2: '100%',
-              Column3: '2.00%',
-              Column4: num,
-              Column5: num / 100,
-              Column6: num + '天',
-              Column7: (num - .2) + '天',
-              Column8: num + '天',
-              Column9: (num - .2) + '天',
-              Column10: num + '%',
-              Column11: num * 1000,
-              Column12: num + '%',
-              Column13: num + '%',
-              Column14: num * 1000,
-              Column15: num + '%',
-              Column16: num + '%',
-              Column17: random,
-              Column18: random,
-              Column19: random,
-              Column20: random,
-              Column21: num,
-              Column22: num,
-              Column23: num,
-              Column24: num,
-              Column25: num,
+              selectedRowKeys: [],
+              count: 100,
+              pageIndex: 1,
+              pageSize: 15,
+              data: _.times(100, function(i) {
+                let num = i + 1;
+                let random = i + 10; //Math.ceil(Math.random()*7);
+
+                return {
+                  key: num,
+                  Column1: random + num + "%",
+                  Column2: "100%",
+                  Column3: "2.00%",
+                  Column4: num,
+                  Column5: num / 100,
+                  Column6: num + "天",
+                  Column7: num - 0.2 + "天",
+                  Column8: num + "天",
+                  Column9: num - 0.2 + "天",
+                  Column10: num + "%",
+                  Column11: num * 1000,
+                  Column12: num + "%",
+                  Column13: num + "%",
+                  Column14: num * 1000,
+                  Column15: num + "%",
+                  Column16: num + "%",
+                  Column17: random,
+                  Column18: random,
+                  Column19: random,
+                  Column20: random,
+                  Column21: num,
+                  Column22: num,
+                  Column23: num,
+                  Column24: num,
+                  Column25: num
+                };
+              }),
+              columns: [
+                {
+                  title: "Group1",
+                  textTitle: "Group1",
+                  key: "Group1",
+                  children: [
+                    {
+                      title: "Column1",
+                      dataIndex: "Column1",
+                      key: "Column1",
+                      width: 110
+                    },
+                    {
+                      title: "Column2",
+                      dataIndex: "Column2",
+                      key: "Column2",
+                      width: 110
+                    },
+                    {
+                      title: "Column3",
+                      dataIndex: "Column3",
+                      key: "Column3",
+                      width: 110
+                    }
+                  ]
+                },
+                {
+                  title: "Group2",
+                  dataIndex: "Group2",
+                  key: "Group2",
+                  children: [
+                    {
+                      title: "Column4",
+                      dataIndex: "Column4",
+                      key: "Column4",
+                      width: 110
+                    },
+                    {
+                      title: "Column5",
+                      dataIndex: "Column5",
+                      key: "Column5",
+                      width: 110
+                    },
+                    {
+                      title: "Column6",
+                      dataIndex: "Column6",
+                      key: "Column6",
+                      width: 110
+                    },
+                    {
+                      title: "Column7",
+                      dataIndex: "Column7",
+                      key: "Column7",
+                      width: 110
+                    },
+                    {
+                      title: "Column8",
+                      dataIndex: "Column8",
+                      key: "Column8",
+                      width: 110
+                    }
+                  ]
+                },
+                {
+                  title: "Group3",
+                  dataIndex: "Group3",
+                  key: "Group3",
+                  children: [
+                    {
+                      title: "Column9",
+                      dataIndex: "Column9",
+                      key: "Column9",
+                      width: 110
+                    },
+                    {
+                      title: "Column10",
+                      dataIndex: "Column10",
+                      key: "Column10",
+                      width: 110
+                    }
+                  ]
+                },
+                {
+                  title: "Group4",
+                  dataIndex: "Group4",
+                  key: "Group4",
+                  children: [
+                    {
+                      title: "Column11",
+                      dataIndex: "Column11",
+                      key: "Column11",
+                      width: 110
+                    },
+                    {
+                      title: "Column12",
+                      dataIndex: "Column12",
+                      key: "Column12",
+                      width: 110
+                    },
+                    {
+                      title: "Column13",
+                      dataIndex: "Column13",
+                      key: "Column13",
+                      width: 110
+                    },
+                    {
+                      title: "Column14",
+                      dataIndex: "Column14",
+                      key: "Column14",
+                      width: 110
+                    },
+                    {
+                      title: "Column15",
+                      dataIndex: "Column15",
+                      key: "Column15",
+                      width: 110
+                    },
+                    {
+                      title: "Column16",
+                      dataIndex: "Column16",
+                      key: "Column16",
+                      width: 110
+                    }
+                  ]
+                },
+                {
+                  title: "Group5",
+                  dataIndex: "Group5",
+                  key: "Group5",
+                  children: [
+                    {
+                      title: "Column17",
+                      dataIndex: "Column17",
+                      key: "Column17",
+                      width: 110
+                    },
+                    {
+                      title: "Column18",
+                      dataIndex: "Column18",
+                      key: "Column18",
+                      width: 110
+                    },
+                    {
+                      title: "Column19",
+                      dataIndex: "Column19",
+                      key: "Column19",
+                      width: 110
+                    },
+                    {
+                      title: "Column20",
+                      dataIndex: "Column20",
+                      key: "Column20",
+                      width: 110
+                    }
+                  ]
+                },
+                {
+                  title: "Group6",
+                  dataIndex: "Group6",
+                  key: "Group6",
+                  children: [
+                    {
+                      title: "Column21",
+                      dataIndex: "Column21",
+                      key: "Column21",
+                      width: 110
+                    },
+                    {
+                      title: "Column22",
+                      dataIndex: "Column22",
+                      key: "Column22",
+                      width: 110
+                    },
+                    {
+                      title: "Column23",
+                      dataIndex: "Column23",
+                      key: "Column23",
+                      width: 110
+                    },
+                    {
+                      title: "Column24",
+                      dataIndex: "Column24",
+                      key: "Column24",
+                      width: 110
+                    },
+                    {
+                      title: "Column25",
+                      dataIndex: "Column25",
+                      key: "Column25",
+                      width: 110
+                    }
+                  ]
+                }
+              ]
             };
-          }),
-          columns: [{
-            title: 'Group1',
-            textTitle: 'Group1',
-            key: 'Group1',
-            children: [{
-              title: 'Column1',
-              dataIndex: 'Column1',
-              key: 'Column1',
-              width: 110
-            }, {
-              title: 'Column2',
-              dataIndex: 'Column2',
-              key: 'Column2',
-              width: 110
-            }, {
-              title: 'Column3',
-              dataIndex: 'Column3',
-              key: 'Column3',
-              width: 110
-            }]
-          }, {
-            title: 'Group2',
-            dataIndex: 'Group2',
-            key: 'Group2',
-            children: [{
-              title: 'Column4',
-              dataIndex: 'Column4',
-              key: 'Column4',
-              width: 110
-            }, {
-              title: 'Column5',
-              dataIndex: 'Column5',
-              key: 'Column5',
-              width: 110
-            }, {
-              title: 'Column6',
-              dataIndex: 'Column6',
-              key: 'Column6',
-              width: 110
-            }, {
-              title: 'Column7',
-              dataIndex: 'Column7',
-              key: 'Column7',
-              width: 110
-            }, {
-              title: 'Column8',
-              dataIndex: 'Column8',
-              key: 'Column8',
-              width: 110
-            }]
-          }, {
-            title: 'Group3',
-            dataIndex: 'Group3',
-            key: 'Group3',
-            children: [{
-              title: 'Column9',
-              dataIndex: 'Column9',
-              key: 'Column9',
-              width: 110
-            }, {
-              title: 'Column10',
-              dataIndex: 'Column10',
-              key: 'Column10',
-              width: 110
-            }]
-          }, {
-            title: 'Group4',
-            dataIndex: 'Group4',
-            key: 'Group4',
-            children: [{
-              title: 'Column11',
-              dataIndex: 'Column11',
-              key: 'Column11',
-              width: 110
-            }, {
-              title: 'Column12',
-              dataIndex: 'Column12',
-              key: 'Column12',
-              width: 110
-            }, {
-              title: 'Column13',
-              dataIndex: 'Column13',
-              key: 'Column13',
-              width: 110
-            }, {
-              title: 'Column14',
-              dataIndex: 'Column14',
-              key: 'Column14',
-              width: 110
-            }, {
-              title: 'Column15',
-              dataIndex: 'Column15',
-              key: 'Column15',
-              width: 110
-            }, {
-              title: 'Column16',
-              dataIndex: 'Column16',
-              key: 'Column16',
-              width: 110
-            }]
-          }, {
-            title: 'Group5',
-            dataIndex: 'Group5',
-            key: 'Group5',
-            children: [{
-              title: 'Column17',
-              dataIndex: 'Column17',
-              key: 'Column17',
-              width: 110
-            }, {
-              title: 'Column18',
-              dataIndex: 'Column18',
-              key: 'Column18',
-              width: 110
-            }, {
-              title: 'Column19',
-              dataIndex: 'Column19',
-              key: 'Column19',
-              width: 110
-            }, {
-              title: 'Column20',
-              dataIndex: 'Column20',
-              key: 'Column20',
-              width: 110
-            }]
-          }, {
-            title: 'Group6',
-            dataIndex: 'Group6',
-            key: 'Group6',
-            children: [{
-              title: 'Column21',
-              dataIndex: 'Column21',
-              key: 'Column21',
-              width: 110
-            }, {
-              title: 'Column22',
-              dataIndex: 'Column22',
-              key: 'Column22',
-              width: 110
-            }, {
-              title: 'Column23',
-              dataIndex: 'Column23',
-              key: 'Column23',
-              width: 110
-            }, {
-              title: 'Column24',
-              dataIndex: 'Column24',
-              key: 'Column24',
-              width: 110
-            }, {
-              title: 'Column25',
-              dataIndex: 'Column25',
-              key: 'Column25',
-              width: 110
-            }]
-          }]
-        };
-      },
-      onPageChange: function (pageIndex, pageSize) {
-        console.log(pageIndex);
-
-        // this.setState({
-        //   pageIndex,
-        //   pageSize,
-        //   count: 100,
-        //   data: _.times(15, function (i) {
-        //     let num = i + 1;
-        //     let random = Math.ceil(Math.random() * 7);
-        //     //let random = 100;
-
-        //     return {
-        //       key: num,
-        //       Column1: random + num + '%',
-        //       Column2: '100%',
-        //       Column3: '2.00%',
-        //       Column4: num,
-        //       Column5: num / 100,
-        //       Column6: num + '天',
-        //       Column7: (num - .2) + '天',
-        //       Column8: num + '天',
-        //       Column9: (num - .2) + '天',
-        //       Column10: num + '%',
-        //       Column11: num * 1000,
-        //       Column12: num + '%',
-        //       Column13: num + '%',
-        //       Column14: num * 1000,
-        //       Column15: num + '%',
-        //       Column16: num + '%',
-        //       Column17: random,
-        //       Column18: random,
-        //       Column19: random,
-        //       Column20: random,
-        //       Column21: num,
-        //       Column22: num,
-        //       Column23: num,
-        //       Column24: num,
-        //       Column25: num,
-        //     };
-        //   })
-        // });
-      },
-      render: function () {
-        return this.props.tmpls[0]({
-          paginationProps: {
-            showRefresh: false
           },
-          rowSelection: {
-            selectedRowKeys: this.state.selectedRowKeys,
-            onChange: (selectedRowKeys) => {
-              this.setState({
-                selectedRowKeys
-              });
-            }
-          }
-        }, this.state, this);
-      }
-    }));
-  </script>
-</body>
+          onPageChange: function(pageIndex, pageSize) {
+            console.log(pageIndex);
 
+            // this.setState({
+            //   pageIndex,
+            //   pageSize,
+            //   count: 100,
+            //   data: _.times(15, function (i) {
+            //     let num = i + 1;
+            //     let random = Math.ceil(Math.random() * 7);
+            //     //let random = 100;
+
+            //     return {
+            //       key: num,
+            //       Column1: random + num + '%',
+            //       Column2: '100%',
+            //       Column3: '2.00%',
+            //       Column4: num,
+            //       Column5: num / 100,
+            //       Column6: num + '天',
+            //       Column7: (num - .2) + '天',
+            //       Column8: num + '天',
+            //       Column9: (num - .2) + '天',
+            //       Column10: num + '%',
+            //       Column11: num * 1000,
+            //       Column12: num + '%',
+            //       Column13: num + '%',
+            //       Column14: num * 1000,
+            //       Column15: num + '%',
+            //       Column16: num + '%',
+            //       Column17: random,
+            //       Column18: random,
+            //       Column19: random,
+            //       Column20: random,
+            //       Column21: num,
+            //       Column22: num,
+            //       Column23: num,
+            //       Column24: num,
+            //       Column25: num,
+            //     };
+            //   })
+            // });
+          },
+          render: function() {
+            return nj`<div style="padding:10px;">
+              <fj-DataGrid {paginationProps}
+                           :tableProps="{
+                             scroll: {
+                               x: 2750
+                             }
+                           }"
+                           {onTableScrollBottom}
+                           {loading}
+                           localMode={true}
+                           showPageSize
+                           showDataCount
+                           showDataFilter
+                           showColumnFilter
+                           {columns}
+                           {rowSelection}
+                           {data}
+                           {onPageChange}
+                           {count}
+                           {pageIndex}
+                           {pageSize} />
+            </div>`(
+              {
+                paginationProps: {
+                  showRefresh: false
+                },
+                rowSelection: {
+                  selectedRowKeys: this.state.selectedRowKeys,
+                  onChange: selectedRowKeys => {
+                    this.setState({
+                      selectedRowKeys
+                    });
+                  }
+                }
+              },
+              this.state,
+              this
+            );
+          }
+        })
+      );
+
+      ReactDOM.render(
+        nj`<Container />`(),
+        document.querySelector("#container")
+      );
+    </script>
+  </body>
 </html>

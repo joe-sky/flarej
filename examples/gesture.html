@@ -1,76 +1,83 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="../dist/css/flarej.css" rel="stylesheet" />
-  <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
-</head>
-<body>
-  <div>
-    <script type="text/nornj" data-auto>
-      <Container>
-        <#tmpl>
-          <fj-Gesture {onTap}
-                      {onTapHold}
-                      {onPan}
-                      {onPinch}
-                      {onRotate}
-                      {onSwipeLeft}
-                      {onSwipeRight}>
-            <div style="width:90%;height:1500px;background-color:yellow;color:blue;">{msg}</div>
-          </fj-Gesture>
-        </#tmpl>
-      </Container>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="../dist/css/flarej.css" rel="stylesheet" />
+    <link href="../dist/css/theme/flarej.theme.concise.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/create-react-class/create-react-class.js"></script>
+    <script src="../node_modules/nornj/dist/nornj.js"></script>
+    <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
+    <script src="../dist/js/flarej.js"></script>
+    <script>
+      nj.registerComponent(
+        "Container",
+        createReactClass({
+          getInitialState: function() {
+            return {
+              msg: "touch me " + Date.now()
+            };
+          },
+          onTap: function() {
+            console.log("tap");
+            this.setState({ msg: "touch me " + Date.now() });
+          },
+          onTapHold: function() {
+            console.log("tapHold");
+          },
+          onPan: function(p) {
+            console.log("onPan");
+            //console.log('x:' + p.x + ',y:' + p.y);
+          },
+          onPinch: function(p) {
+            console.log("onPinch");
+            //console.log('scale:' + p.scale);
+          },
+          onRotate: function(p) {
+            console.log("onRotate");
+            //console.log('rotation:' + p.rotation);
+          },
+          onSwipeLeft: function() {
+            console.log("onSwipeLeft");
+          },
+          onSwipeRight: function() {
+            console.log("onSwipeRight");
+          },
+          render: function() {
+            return nj`
+              <fj-Gesture {onTap}
+                          {onTapHold}
+                          {onPan}
+                          {onPinch}
+                          {onRotate}
+                          {onSwipeLeft}
+                          {onSwipeRight}>
+                <div style="width:90%;height:1500px;background-color:yellow;color:blue;">{msg}</div>
+              </fj-Gesture>`(
+              {
+                msg: this.state.msg
+              },
+              this
+            );
+          }
+        })
+      );
+
+      ReactDOM.render(
+        nj`<Container />`(),
+        document.querySelector("#container")
+      );
     </script>
-  </div>
-  <script src="../node_modules/react/umd/react.development.js"></script>
-  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
-  <script src="../node_modules/create-react-class/create-react-class.js"></script>
-  <script src="../node_modules/nornj/dist/nornj.js"></script>
-  <script src="../node_modules/nornj-react/dist/nornj-react.js"></script>
-  <script src="../dist/js/flarej.js"></script>
-  <script>
-    nj.registerComponent('Container', createReactClass({
-      getInitialState: function () {
-        return {
-          msg: 'touch me ' + Date.now()
-        };
-      },
-      onTap: function () {
-        console.log('tap');
-        this.setState({ msg: 'touch me ' + Date.now() });
-      },
-      onTapHold: function () {
-        console.log('tapHold');
-      },
-      onPan: function (p) {
-        console.log('onPan');
-        //console.log('x:' + p.x + ',y:' + p.y);
-      },
-      onPinch: function (p) {
-        console.log('onPinch');
-        //console.log('scale:' + p.scale);
-      },
-      onRotate: function (p) {
-        console.log('onRotate');
-        //console.log('rotation:' + p.rotation);
-      },
-      onSwipeLeft: function () {
-        console.log('onSwipeLeft');
-      },
-      onSwipeRight: function () {
-        console.log('onSwipeRight');
-      },
-      render: function () {
-        return this.props.tmpls[0]({
-          msg: this.state.msg
-        }, this);
-      }
-    }));
-  </script>
-</body>
+  </body>
 </html>

@@ -438,17 +438,13 @@ ul {
   background-image: none;
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
           border-radius: 3px;
   -webkit-box-shadow: inset 0 1px 1px #eeeeee;
-     -moz-box-shadow: inset 0 1px 1px #eeeeee;
           box-shadow: inset 0 1px 1px #eeeeee;
   -webkit-transition: border-color ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.1s;
   transition: border-color ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.1s;
-  -o-transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
-  -moz-transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s, -moz-box-shadow ease-in-out 0.1s;
   transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
-  transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.1s, -moz-box-shadow ease-in-out 0.1s;
+  transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.1s;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -457,14 +453,12 @@ ul {
   border-color: #c1c1c1;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px #eeeeee, 0 0 8px #c1c1c1;
-     -moz-box-shadow: inset 0 1px 1px #eeeeee, 0 0 8px #c1c1c1;
           box-shadow: inset 0 1px 1px #eeeeee, 0 0 8px #c1c1c1;
 }
 .fj-form-elem[disabled] {
   pointer-events: none;
   cursor: not-allowed;
   -webkit-box-shadow: none;
-     -moz-box-shadow: none;
           box-shadow: none;
   background-color: #f0f0f0;
 }
@@ -489,7 +483,6 @@ ul {
   border: 1px solid #ccc;
   background-color: #fff;
   -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
           border-radius: 4px;
 }
 .fj-btn:focus {
@@ -505,7 +498,6 @@ ul {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .fj-btn.fj-disabled,
@@ -514,7 +506,6 @@ ul {
   cursor: not-allowed;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
-     -moz-box-shadow: none;
           box-shadow: none;
   opacity: 0.65;
 }

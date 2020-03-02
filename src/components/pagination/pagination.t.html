@@ -1,5 +1,5 @@
 ﻿<template name="partPage1" local>
-  <#for {1} {pageIndex + 2} loopLast>
+  <#for {1 .. (pageIndex + 2)}>
     <li key={@index} class="fj-pagn-pageno{@index | isCurrentPage}" title=第{@index}页 onClick="{refresh | clickBtn('index')}">{@index}</li>
   </#for>
   <li key=ellipsis2 onClick="{refresh | clickBtn('next')}">...</li>
@@ -9,7 +9,7 @@
 <template name="partPage2" local>
   <li key=1 class="fj-pagn-pageno{1 | isCurrentPage}" title=第1页 onClick="{refresh | clickBtn('first')}">1</li>
   <li key=ellipsis1 onClick="{refresh | clickBtn('prev')}">...</li>
-  <#for {pageIndex - 2} {pageIndex + 2} loopLast>
+  <#for {(pageIndex - 2) .. (pageIndex + 2)}>
     <li key={@index} class="fj-pagn-pageno{@index | isCurrentPage}" title=第{@index}页 onClick="{refresh | clickBtn('index')}">{@index}</li>
   </#for>
   <li key=ellipsis2 onClick="{refresh | clickBtn('next')}">...</li>
@@ -19,7 +19,7 @@
 <template name="partPage3" local>
   <li key=1 class="fj-pagn-pageno{1 | isCurrentPage}" title=第1页 onClick="{refresh | clickBtn('first')}">1</li>
   <li key=ellipsis1 onClick="{refresh | clickBtn('prev')}">...</li>
-  <#for {pageIndex - 2} {pageCount} loopLast>
+  <#for {(pageIndex - 2) .. pageCount}>
     <li key={@index} class="fj-pagn-pageno{@index | isCurrentPage}" title=第{@index}页 onClick="{refresh | clickBtn('index')}">{@index}</li>
   </#for>
 </template>
@@ -37,7 +37,7 @@
     <ul class=fj-pagn-pages>
       <#if {hasPages}>
         <#if {pageCount <= 10}>
-          <#for {1} {pageCount} loopLast>
+          <#for {1 .. pageCount}>
             <li key={@index} class="fj-pagn-pageno{@index | isCurrentPage}" title=第{@index}页 onClick="{refresh | clickBtn('index')}">{@index}</li>
           </#for>
           <#elseif {pageIndex | showPartPage(1)}>

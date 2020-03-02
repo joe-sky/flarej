@@ -15,13 +15,13 @@ registerFilter({
 registerExtension({
   emptyElem: () => tmpls.emptyElem(),
 
-  cloneElem: options => cloneElement(options.result(), options.props),
+  cloneElem: options => cloneElement(options.children(), options.props),
 
-  childrenEach: (children, options) => Children.map(children, child => options.result({
+  childrenEach: (children, options) => Children.map(children, child => options.children({
     data: [{ '@child': child }]
   })),
 
-  assign: options => Object.assign(options.result(), options.props.from)
+  assign: options => Object.assign(options.children(), options.props.from)
 });
 
 registerComponent('fa', FontAwesome);
