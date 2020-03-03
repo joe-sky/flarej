@@ -1010,10 +1010,10 @@ babel-plugin-external-helpers@^6.4.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-nornj-loader@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/babel-plugin-nornj-loader/-/babel-plugin-nornj-loader-1.0.13.tgz#845bd5619e3a93b4a0b533e8f11eb89210b7214d"
-  integrity sha512-XL2YZU1eDdJVz9Q/kzTJpBK9kLOFuXUEOdGAUp3EWBdL9B3NcNyx7act9cPPEIR8hgFslR92cCSrVa/9jGihFg==
+babel-plugin-nornj-loader@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/babel-plugin-nornj-loader/-/babel-plugin-nornj-loader-1.0.14.tgz#4c3e43406ab10899eb32f289b32c74befff99dbd"
+  integrity sha512-I+C/zg3Zwpy4D1QV1B2aqGHn55hZbALb/krpSOXkX1npkm+U3SidTfoDtkJGj5rHI3WegTYdRfMA5EMVPeTaTg==
   dependencies:
     require-resolve "0.0.2"
 

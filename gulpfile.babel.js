@@ -113,7 +113,8 @@ gulp.task('build-js', () => {
 
   return gulp.src('./src/base.js')
     .pipe(env.set({
-      BABEL_ENV: 'webpack'
+      BABEL_ENV: 'webpack',
+      NODE_ENV: 'production'
     }))
     .pipe(webpackStream({
       devtool: argv.p ? 'source-map' : false,
@@ -248,7 +249,8 @@ gulp.task("lib", () => {
   //Convert js files
   return gulp.src('./src/**/*.js')
     .pipe(env.set({
-      BABEL_ENV: 'precompile'
+      BABEL_ENV: 'precompile',
+      NODE_ENV: 'production'
     }))
     .pipe(babel())
     .pipe(gulp.dest('./lib'));

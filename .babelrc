@@ -25,6 +25,17 @@
               "prop": "@",
               "strProp": "@@",
               "comment": ""
+            },
+            "filterConfig": {
+              "clickBtn": {
+                "hasOptions": true
+              },
+              "isCurrentPage": {
+                "hasOptions": true
+              },
+              "showPartPage": {
+                "hasOptions": true
+              }
             }
           }
         ],

@@ -186,8 +186,8 @@ class Pagination extends Component {
         };
       case 'index':
         return () => {
-          if (context.index != pageIndex) {
-            fn(context.index);
+          if (context.item != pageIndex) {
+            fn(context.item);
           }
         };
       default:

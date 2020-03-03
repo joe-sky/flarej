@@ -1,11 +1,8 @@
-<#cloneElem ref={ref} style={style}>
-  <#props>
-    <#if {isMobile}>
-      <@onTouchStart>{touchStart}</@onTouchStart>
-      <@onTouchMove>{touchMove}</@onTouchMove>
-      <@onTouchEnd>{touchEnd}</@onTouchEnd>
-      <@onTouchCancel>{touchEnd}</@onTouchCancel>
-    </#if>
-  </#props>
+<#cloneElem ref={ref} style={style} {{... isMobile ? {
+  onTouchStart: touchStart,
+  onTouchMove: touchMove,
+  onTouchEnd: touchEnd,
+  onTouchCancel: touchEnd
+} : {} }}>
   {children}
 </#cloneElem>

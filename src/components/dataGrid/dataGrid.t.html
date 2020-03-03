@@ -1,27 +1,21 @@
 ﻿<div class="fj-dg">
   <#if {showHead}>
     <fj-row class="fj-dg-head">
-      <fj-col l=9 m=8 s=6>
-        <#props>
-          <#if {filterInputPosition == 'left'}>
-            <@push>3</@push>
-            <@pushM>4</@pushM>
-            <@pushS>6</@pushS>
-            <@class>{'colLeft'}</@class>
-          </#if>
-        </#props>
+      <fj-col l=9 m=8 s=6 {{... filterInputPosition == 'left' ? {
+        push: 3,
+        pushM: 4,
+        pushS: 6,
+        className: 'colLeft'
+      } : {} }}>
         <#if {showPageSize}>
           <fj-PageSize prefix=每页显示 suffix=条记录 setPageSize={true} {pageSize} {pageSizes} onChange={sizeChange} />
         </#if>
       </fj-col>
-      <fj-col l=3 m=4 s=6>
-        <#props>
-          <#if {filterInputPosition == 'left'}>
-            <@pull>9</@pull>
-            <@pullM>8</@pullM>
-            <@pullS>6</@pullS>
-          </#if>
-        </#props>
+      <fj-col l=3 m=4 s=6 {{... filterInputPosition == 'left' ? {
+        pull: 9,
+        pullM: 8,
+        pullS: 6
+      } : {} }}>
         <#if {showDataFilter}>
           <div class="input dataFilter {filterInputPosition == 'left' ? 'left' : ''}">
             <ant-Input placeholder=可筛选表格数据 onChange={searchData} value={searchText} ref={searchDataRef} />
