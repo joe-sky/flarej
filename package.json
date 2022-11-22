@@ -97,7 +97,7 @@
     "jasmine": "^2.5.3",
     "jasmine-enzyme": "^4.0.1",
     "jsdom": "^8.1.0",
-    "karma": "^1.5.0",
+    "karma": "^6.4.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage-istanbul-reporter": "^1.0.0",
     "karma-jasmine": "^1.1.0",
